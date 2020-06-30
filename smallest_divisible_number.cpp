@@ -1,8 +1,11 @@
+/* Program to find the smallest number evenly divisible by each number from 1 to n */
+
 #include<bits/stdc++.h>
 using namespace std;
 #define MAX 100000
 vector <int> primeNo;
-void SieveOfEratosthenes()
+
+void SieveOfEratosthenes()       //Pre-computing all the prime numbers upto 10^5
 {
   bool prime[MAX] = {false};
   for(int i = 2; i*i<=MAX; i++)
@@ -24,7 +27,7 @@ void SieveOfEratosthenes()
   }
 }
 
-long long getSmallestDivNum(long long n)
+long long getSmallestDivNum(long long n)    // LCM of numbers till N
 {
   long long lcm = 1;
   for(int i=0; i<primeNo.size() && primeNo[i]<=n; i++)
